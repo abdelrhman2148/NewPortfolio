@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | DevOps Engineer Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Projects Page Specific Styles */
+        .projects-container {
+            padding: 120px 0 80px;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .project-card {
+            background-color: var(--bg-secondary);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .project-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .project-header i {
+            font-size: 2rem;
+            color: var(--accent-primary);
+        }
+        
+        .project-header h3 {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin: 0;
+        }
+        
+        .project-description {
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+            flex-grow: 1;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .project-tech span {
+            background-color: var(--bg-tertiary);
+            color: var(--accent-primary);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--accent-secondary);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .project-link:hover {
+            color: var(--accent-primary);
+        }
+        
+        .project-details {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .project-details h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--accent-secondary);
+        }
+        
+        .project-details ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .project-details li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+        }
+        
+        .project-details li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+        }
+        
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">DevOps<span>Engineer</span></div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="experience.html">Experience</a></li>
+                    <li><a href="education.html">Education</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="projects-container">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                <p class="section-description">Here are some of the key projects I've worked on throughout my career as a DevOps Engineer, showcasing my expertise in infrastructure automation, CI/CD pipelines, and cloud technologies.</p>
+                
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="fas fa-cloud"></i>
+                            <h3>Enterprise Cloud Migration</h3>
+                        </div>
+                        <div class="project-description">
+                            <p>Led the migration of a legacy on-premise infrastructure to AWS, resulting in 40% cost reduction and improved scalability.</p>
+                        </div>
+                        <div class="project-tech">
+                            <span>AWS</span>
+                            <span>Terraform</span>
+                            <span>CloudFormation</span>
+                            <span>EC2</span>
+                            <span>RDS</span>
+                        </div>
+                        <div class="project-details">
+                            <h4>Key Achievements</h4>
+                            <ul>
+                                <li>Designed and implemented infrastructure as code using Terraform</li>
+                                <li>Set up auto-scaling groups for dynamic resource allocation</li>
+                                <li>Implemented disaster recovery with multi-region failover</li>
+                                <li>Reduced monthly infrastructure costs by 40%</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="fas fa-rocket"></i>
+                            <h3>CI/CD Pipeline Modernization</h3>
+                        </div>
+                        <div class="project-description">
+                            <p>Built a robust CI/CD pipeline using Jenkins, Docker, and Kubernetes that reduced deployment time from days to minutes.</p>
+                        </div>
+                        <div class="project-tech">
+                            <span>Jenkins</span>
+                            <span>Docker</span>
+                            <span>Kubernetes</span>
+                            <span>ArgoCD</span>
+                            <span>GitOps</span>
+                        </div>
+                        <div class="project-details">
+                            <h4>Key Achievements</h4>
+                            <ul>
+                                <li>Implemented GitOps workflow with ArgoCD for Kubernetes deployments</li>
+                                <li>Reduced deployment time from 2 days to 15 minutes</li>
+                                <li>Integrated automated testing into the pipeline</li>
+                                <li>Implemented blue/green deployment strategy</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Security Automation Framework</h3>
+                        </div>
+                        <div class="project-description">
+                            <p>Implemented automated security scanning and compliance checks in the deployment pipeline, ensuring all deployments meet security standards.</p>
+                        </div>
+                        <div class="project-tech">
+                            <span>HashiCorp Vault</span>
+                            <span>SAST/DAST</span>
+                            <span>Compliance</span>
+                            <span>SonarQube</span>
+                        </div>
+                        <div class="project-details">
+                            <h4>Key Achievements</h4>
+                            <ul>
+                                <li>Integrated HashiCorp Vault for secrets management</li>
+                                <li>Implemented automated vulnerability scanning</li>
+                                <li>Created compliance reporting dashboard</li>
+                                <li>Reduced security incidents by 75%</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Monitoring & Observability Platform</h3>
+                        </div>
+                        <div class="project-description">
+                            <p>Designed and implemented a comprehensive monitoring solution using Prometheus, Grafana, and ELK stack for real-time system observability.</p>
+                        </div>
+                        <div class="project-tech">
+                            <span>Prometheus</span>
+                            <span>Grafana</span>
+                            <span>ELK Stack</span>
+                            <span>Alertmanager</span>
+                        </div>
+                        <div class="project-details">
+                            <h4>Key Achievements</h4>
+                            <ul>
+                                <li>Built custom dashboards for system and application metrics</li>
+                                <li>Implemented alerting with PagerDuty integration</li>
+                                <li>Created automated incident response playbooks</li>
+                                <li>Reduced MTTR (Mean Time To Resolution) by 60%</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="fas fa-network-wired"></i>
+                            <h3>Microservices Architecture Migration</h3>
+                        </div>
+                        <div class="project-description">
+                            <p>Led the migration from a monolithic application to a microservices architecture using Docker containers and Kubernetes orchestration.</p>
+                        </div>
+                        <div class="project-tech">
+                            <span>Microservices</span>
+                            <span>Docker</span>
+                            <span>Kubernetes</span>
+                            <span>Service Mesh</span>
+                        </div>
+                        <div class="project-details">
+                            <h4>Key Achievements</h4>
+                            <ul>
+                                <li>Decomposed monolithic application into microservices</li>
+                                <li>Implemented Istio service mesh for traffic management</li>
+                                <li>Set up distributed tracing with Jaeger</li>
+                                <li>Improved system resilience and scalability</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="fas fa-code-branch"></i>
+                            <h3>Infrastructure Automation Framework</h3>
+                        </div>
+                        <div class="project-description">
+                            <p>Developed a custom infrastructure automation framework using Ansible, Terraform, and Python to standardize deployment processes across the organization.</p>
+                        </div>
+                        <div class="project-tech">
+                            <span>Ansible</span>
+                            <span>Terraform</span>
+                            <span>Python</span>
+                            <span>GitLab CI</span>
+                        </div>
+                        <div class="project-details">
+                            <h4>Key Achievements</h4>
+                            <ul>
+                                <li>Created reusable Terraform modules for common infrastructure patterns</li>
+                                <li>Built custom Ansible roles for configuration management</li>
+                                <li>Implemented self-service infrastructure provisioning</li>
+                                <li>Reduced infrastructure provisioning time by 85%</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">DevOps<span>Engineer</span></div>
+                <div class="social-links">
+
+
+                    
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 DevOps Engineer Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume | DevOps Engineer Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Resume Page Specific Styles */
+        .resume-container {
+            padding: 120px 0 80px;
+        }
+        
+        .resume-actions {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        
+        .resume-actions .btn {
+            margin: 0 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .resume-preview {
+            background-color: var(--bg-secondary);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: var(--shadow);
+        }
+        
+        .resume-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .resume-name {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            color: var(--text-primary);
+        }
+        
+        .resume-title {
+            font-size: 1.2rem;
+            color: var(--accent-primary);
+            margin-bottom: 15px;
+        }
+        
+        .resume-contact {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        .resume-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .resume-contact-item i {
+            color: var(--accent-secondary);
+        }
+        
+        .resume-section {
+            margin-bottom: 30px;
+        }
+        
+        .resume-section-title {
+            font-size: 1.3rem;
+            color: var(--accent-secondary);
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .resume-section-title i {
+            font-size: 1.2rem;
+        }
+        
+        .resume-item {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .resume-item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .resume-item-title {
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+        
+        .resume-item-date {
+            color: var(--accent-primary);
+            font-size: 0.9rem;
+        }
+        
+        .resume-item-subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+        
+        .resume-item-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        .resume-item-bullets {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .resume-item-bullets li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 5px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .resume-item-bullets li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .skill-tag {
+            background-color: var(--bg-tertiary);
+            color: var(--accent-primary);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .download-prompt {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: var(--bg-tertiary);
+            border-radius: var(--border-radius);
+            border: 1px dashed var(--accent-secondary);
+        }
+        
+        .download-prompt p {
+            margin-bottom: 15px;
+            color: var(--text-secondary);
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+                color: black;
+            }
+            
+            header, footer, .resume-actions, .download-prompt {
+                display: none;
+            }
+            
+            .resume-preview {
+                box-shadow: none;
+                border: none;
+                padding: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .resume-preview {
+                padding: 20px;
+            }
+            
+            .resume-contact {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">DevOps<span>Engineer</span></div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="experience.html">Experience</a></li>
+                    <li><a href="education.html">Education</a></li>
+                    <li><a href="resume.html" class="active">Resume</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="resume-container">
+            <div class="container">
+                <h2 class="section-title">Resume</h2>
+                <p class="section-description">A comprehensive overview of my professional experience, skills, and qualifications as a DevOps Engineer.</p>
+                
+                <div class="resume-actions">
+                    <a href="#" class="btn primary" onclick="window.print(); return false;"><i class="fas fa-print"></i> Print Resume</a>
+                    <a href="#" class="btn secondary"><i class="fas fa-download"></i> Download PDF</a>
+                </div>
+                
+                <div class="resume-preview">
+                    <div class="resume-header">
+                        <h1 class="resume-name">John Doe</h1>
+                        <div class="resume-title">Senior DevOps Engineer</div>
+                        <div class="resume-contact">
+                            <div class="resume-contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>john.doe@example.com</span>
+                            </div>
+                            <div class="resume-contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>(123) 456-7890</span>
+                            </div>
+                            <div class="resume-contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>San Francisco, CA</span>
+                            </div>
+                            <div class="resume-contact-item">
+                                <i class="fab fa-linkedin"></i>
+                                <span>linkedin.com/in/johndoe</span>
+                            </div>
+                            <div class="resume-contact-item">
+                                <i class="fab fa-github"></i>
+                                <span>github.com/johndoe</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="resume-section">
+                        <h3 class="resume-section-title"><i class="fas fa-user"></i> Professional Summary</h3>
+                        <p class="resume-item-description">Experienced DevOps Engineer with over 7 years of expertise in designing, implementing, and managing cloud infrastructure and CI/CD pipelines. Skilled in automating deployment processes, optimizing system performance, and ensuring high availability and scalability of applications. Passionate about implementing DevOps best practices to improve development workflows and operational efficiency.</p>
+                    </div>
+                    
+                    <div class="resume-section">
+                        <h3 class="resume-section-title"><i class="fas fa-briefcase"></i> Work Experience</h3>
+                        
+                        <div class="resume-item">
+                            <div class="resume-item-header">
+                                <div class="resume-item-title">Senior DevOps Engineer</div>
+                                <div class="resume-item-date">2020 - Present</div>
+                            </div>
+                            <div class="resume-item-subtitle">Tech Innovations Inc., San Francisco, CA</div>
+                            <ul class="resume-item-bullets">
+                                <li>Lead a team of 5 DevOps engineers in designing and implementing cloud infrastructure on AWS</li>
+                                <li>Reduced deployment time by 70% through implementation of CI/CD pipelines with Jenkins and GitLab</li>
+                                <li>Architected and deployed Kubernetes clusters for microservices architecture</li>
+                                <li>Implemented infrastructure as code using Terraform, reducing provisioning time by 85%</li>
+                                <li>Established monitoring and alerting systems with Prometheus and Grafana</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="resume-item">
+                            <div class="resume-item-header">
+                                <div class="resume-item-title">DevOps Engineer</div>
+                                <div class="resume-item-date">2017 - 2020</div>
+                            </div>
+                            <div class="resume-item-subtitle">Cloud Solutions Ltd., Seattle, WA</div>
+                            <ul class="resume-item-bullets">
+                                <li>Migrated on-premise applications to AWS, resulting in 40% cost reduction</li>
+                                <li>Implemented Docker containerization for development and production environments</li>
+                                <li>Developed automated backup and disaster recovery solutions</li>
+                                <li>Created and maintained CI/CD pipelines using Jenkins and GitHub Actions</li>
+                                <li>Collaborated with development teams to optimize application performance</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="resume-item">
+                            <div class="resume-item-header">
+                                <div class="resume-item-title">Systems Administrator</div>
+                                <div class="resume-item-date">2015 - 2017</div>
+                            </div>
+                            <div class="resume-item-subtitle">DataTech Systems, Portland, OR</div>
+                            <ul class="resume-item-bullets">
+                                <li>Managed Linux and Windows server environments</li>
+                                <li>Implemented automation scripts using Bash and PowerShell</li>
+                                <li>Maintained network infrastructure and security protocols</li>
+                                <li>Provided technical support and troubleshooting for critical systems</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="resume-section">
+                        <h3 class="resume-section-title"><i class="fas fa-graduation-cap"></i> Education</h3>
+                        
+                        <div class="resume-item">
+                            <div class="resume-item-header">
+                                <div class="resume-item-title">Master of Science in Cloud Computing</div>
+                                <div class="resume-item-date">2018 - 2020</div>
+                            </div>
+                            <div class="resume-item-subtitle">Tech Institute of Advanced Studies</div>
+                        </div>
+                        
+                        <div class="resume-item">
+                            <div class="resume-item-header">
+                                <div class="resume-item-title">Bachelor of Science in Computer Science</div>
+                                <div class="resume-item-date">2013 - 2017</div>
+                            </div>
+                            <div class="resume-item-subtitle">University of Technology</div>
+                        </div>
+                    </div>
+                    
+                    <div class="resume-section">
+                        <h3 class="resume-section-title"><i class="fas fa-cogs"></i> Technical Skills</h3>
+                        
+                        <div class="resume-item">
+                            <div class="resume-item-title">Cloud Platforms</div>
+                            <div class="skills-list">
+                                <span class="skill-tag">AWS</span>
+                                <span class="skill-tag">Azure</span>
+                                <span class="skill-tag">Google Cloud</span>
+                            </div>
+                        </div>
+                        
+                        <div class="resume-item">
+                            <div class="resume-item-title">Containerization & Orchestration</div>
+                            <div class="skills-list">
+                                <span class="skill-tag">Docker</span>
+                                <span class="skill-tag">Kubernetes</span>
+                                <span class="skill-tag">Docker Swarm</span>
+                            </div>
+                        </div>
+                        
+                        <div class="resume-item">
+                            <div class="resume-item-title">CI/CD & Automation</div>
+                            <div class="skills-list">
+                                <span class="skill-tag">Jenkins</span>
+                                <span class="skill-tag">GitLab CI</span>
+                                <span class="skill-tag">GitHub Actions</span>
+                                <span class="skill-tag">ArgoCD</span>
+                            </div>
+                        </div>
+                        
+                        <div class="resume-item">
+                            <div class="resume-item-title">Infrastructure as Code</div>
+                            <div class="skills-list">
+                                <span class="skill-tag">Terraform</span>
+                                <span class="skill-tag">CloudFormation</span>
+                                <span class="skill-tag">Ansible</span>
+                                <span class="skill-tag">Pulumi</span>
+                            </div>
+                        </div>
+                        
+                        <div class="resume-item">
+                            <div class="resume-item-title">Monitoring & Logging</div>
+                            <div class="skills-list">
+                                <span class="skill-tag">Prometheus</span>
+                                <span class="skill-tag">Grafana</span>
+                                <span class="skill-tag">ELK Stack</span>
+                                <span class="skill-tag">Datadog</span>
+                            </div>
+                        </div>
+                        
+                        <div class="resume-item">
+                            <div class="resume-item-title">Programming & Scripting</div>
+                            <div class="skills-list">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Bash</span>
+                                <span class="skill-tag">Go</span>
+                                <span class="skill-tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="resume-section">
+                        <h3 class="resume-section-title"><i class="fas fa-certificate"></i> Certifications</h3>
+                        
+                        <div class="resume-item">
+                            <div class="resume-item-header">
+                                <div class="resume-item-title">AWS Certified DevOps Engineer - Professional</div>
+                                <div class="resume-item-date">2022</div>
+                            </div>
+                        </div>
+                        
+                        <div class="resume-item">
+                            <div class="resume-item-header">
+                                <div class="resume-item-title">Certified Kubernetes Administrator (CKA)</div>
+                                <div class="resume-item-date">2021</div>
+                            </div>
+                        </div>
+                        
+                        <div class="resume-item">
+                            <div class="resume-item-header">
+                                <div class="resume-item-title">HashiCorp Certified: Terraform Associate</div>
+                                <div class="resume-item-date">2020</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="download-prompt">
+                    <p>Need a copy of this resume for your records? Use the buttons above to print or download a PDF version.</p>
+                    <a href="#" class="btn secondary" onclick="window.print(); return false;"><i class="fas fa-print"></i> Print Resume</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">DevOps<span>Engineer</span></div>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 DevOps Engineer Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Engineer Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Contact Form Styles */
+        .contact-section {
+            padding: 80px 0;
+            background-color: var(--bg-primary);
+        }
+        
+        .contact-container {
+            margin-top: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .contact-form {
+            background-color: var(--bg-secondary);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+        }
+        
+        .contact-form:hover {
+            border-color: rgba(255, 255, 255, 0.1);
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: var(--bg-tertiary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            color: var(--text-primary);
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 2px rgba(0, 230, 118, 0.2);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+        }
+        
+        .form-success {
+            text-align: center;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Abdelrhman <span>Fikri</span></div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="experience.html">Experience</a></li>
+                    <li><a href="education.html">Education</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="glitch" data-text="DevOps Engineer">DevOps Engineer</h1>
+                    <p class="subtitle">Automating, Optimizing, Delivering</p>
+                    <p class="description">I build and maintain robust CI/CD pipelines, automate infrastructure, and ensure seamless deployments for modern applications.</p>
+                    <div class="cta-buttons">
+                        <a href="projects.html" class="btn primary">View Projects</a>
+                        <a href="resume.html" class="btn secondary">Download Resume</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="terminal-button red"></span>
+                                <span class="terminal-button yellow"></span>
+                                <span class="terminal-button green"></span>
+                            </div>
+                            <div class="terminal-title">devops@portfolio:~</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="line">$ <span class="command">whoami</span></div>
+                            <div class="line">Abdelrhman Fikri DevOps Engineer</div>
+                            <div class="line">$ <span class="command">ls -la skills/</span></div>
+                            <div class="line">total 10</div>
+                            <div class="line">drwxr-xr-x  2 AWS  68 Oct 10 09:15 .</div>
+                            <div class="line">drwxr-xr-x 10 Docker 320 Oct 10 09:14 ..</div>
+                            <div class="line">-rw-r--r--  1 Jenkins  35 Oct 10 09:15 Docker.yml</div>
+                            <div class="line">-rw-r--r--  1 Ci/CD  42 Oct 10 09:15 Kubernetes.yml</div>
+                            <div class="line">-rw-r--r--  1 IaC  38 Oct 10 09:15 Terraform.yml</div>
+                            <div class="line">-rw-r--r--  1 DevSecOps  30 Oct 10 09:15 Jenkins.yml</div>
+                            <div class="line">-rw-r--r--  1 ELK  28 Oct 10 09:15 AWS.yml</div>
+                            <div class="line">-rw-r--r--  1 Azura  32 Oct 10 09:15 Linux.yml</div>
+                            <div class="line">$ <span class="command">cat skills/Docker.yml | grep level</span></div>
+                            <div class="line">level: Expert</div>
+                            <div class="line">$ <span class="command">_</span><span class="cursor"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <p>I'm a passionate DevOps Engineer with expertise in building and maintaining scalable infrastructure, implementing CI/CD pipelines, and optimizing deployment processes. With a strong background in cloud technologies and automation, I help teams deliver software faster and more reliably.</p>
+                    <p>My approach combines technical expertise with a deep understanding of development workflows to create efficient, secure, and resilient systems that support modern application development.</p>
+                </div>
+                <div class="tech-stack">
+                    <h3>Tech Stack</h3>
+                    <div class="tech-icons">
+                        <div class="tech-icon">
+                            <i class="fab fa-docker"></i>
+                            <span>Docker</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fab fa-kubernetes"></i>
+                            <span>Kubernetes</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fab fa-aws"></i>
+                            <span>AWS</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fab fa-jenkins"></i>
+                            <span>Jenkins</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fab fa-linux"></i>
+                            <span>Linux</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fas fa-code-branch"></i>
+                            <span>Git</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fas fa-terminal"></i>
+                            <span>Bash</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-projects">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="fas fa-cloud"></i>
+                            <h3>Cloud Migration</h3>
+                        </div>
+                        <p>Migrated on-premise infrastructure to AWS using Terraform and implemented auto-scaling for improved reliability.</p>
+                        <div class="project-tech">
+                            <span>AWS</span>
+                            <span>Terraform</span>
+                            <span>CloudFormation</span>
+                        </div>
+                        <a href="projects.html" class="project-link">View Details</a>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="fas fa-rocket"></i>
+                            <h3>CI/CD Pipeline</h3>
+                        </div>
+                        <p>Built a robust CI/CD pipeline using Jenkins, Docker, and Kubernetes for automated testing and deployment.</p>
+                        <div class="project-tech">
+                            <span>Jenkins</span>
+                            <span>Docker</span>
+                            <span>Kubernetes</span>
+                        </div>
+                        <a href="projects.html" class="project-link">View Details</a>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Security Automation</h3>
+                        </div>
+                        <p>Implemented automated security scanning and compliance checks in the deployment pipeline.</p>
+                        <div class="project-tech">
+                            <span>Vault</span>
+                            <span>SAST/DAST</span>
+                            <span>Compliance</span>
+                        </div>
+                        <a href="projects.html" class="project-link">View Details</a>
+                    </div>
+                </div>
+                <div class="view-all">
+                    <a href="projects.html" class="btn secondary">View All Projects</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Get in Touch</h2>
+                <p class="section-description">Have a question or want to discuss a potential project? Feel free to reach out using the form below.</p>
+                
+                <div class="contact-container">
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Your email address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Subject of your message">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Your message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">DevOps<span>Engineer</span></div>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 DevOps Engineer Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Contact form handling
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // Here you would typically send the form data to a server
+                    // For now, we'll just show a success message
+                    const formData = new FormData(contactForm);
+                    let formValues = {};
+                    
+                    for (let [key, value] of formData.entries()) {
+                        formValues[key] = value;
+                    }
+                    
+                    // Log form data (in a real app, you'd send this to a server)
+                    console.log('Form submitted:', formValues);
+                    
+                    // Show success message
+                    contactForm.innerHTML = `
+                        <div class="form-success">
+                            <i class="fas fa-check-circle" style="font-size: 3rem; color: var(--accent-primary); margin-bottom: 20px;"></i>
+                            <h3>Message Sent!</h3>
+                            <p>Thank you for reaching out. I'll get back to you as soon as possible.</p>
+                        </div>
+                    `;
+                });
+            }
+        });
+    </script>
+</body>
+</html>

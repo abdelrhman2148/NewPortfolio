@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience | DevOps Engineer Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Experience Page Specific Styles */
+        .experience-container {
+            padding: 120px 0 80px;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 50px auto 0;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--accent-primary), var(--accent-secondary));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1.5px;
+            border-radius: 3px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 20px 40px;
+            box-sizing: border-box;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        
+        .timeline-item.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--bg-primary);
+            border: 3px solid var(--accent-primary);
+            top: 25px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(odd)::after {
+            right: -13px;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -13px;
+        }
+        
+        .timeline-content {
+            background-color: var(--bg-secondary);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .timeline-date {
+            color: var(--accent-primary);
+            font-weight: 500;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .timeline-title {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: var(--text-primary);
+        }
+        
+        .timeline-company {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .timeline-company i {
+            color: var(--accent-secondary);
+        }
+        
+        .timeline-description {
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+        }
+        
+        .timeline-achievements {
+            margin-top: 15px;
+        }
+        
+        .timeline-achievements h4 {
+            font-size: 1rem;
+            color: var(--accent-secondary);
+            margin-bottom: 10px;
+        }
+        
+        .timeline-achievements ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .timeline-achievements li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+        }
+        
+        .timeline-achievements li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+        }
+        
+        .tech-used {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        
+        .tech-used span {
+            background-color: var(--bg-tertiary);
+            color: var(--accent-primary);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+                text-align: left;
+            }
+            
+            .timeline-item:nth-child(odd) {
+                left: 0;
+                text-align: left;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item:nth-child(odd)::after,
+            .timeline-item:nth-child(even)::after {
+                left: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">DevOps<span>Engineer</span></div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="experience.html" class="active">Experience</a></li>
+                    <li><a href="education.html">Education</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="experience-container">
+            <div class="container">
+                <h2 class="section-title">Professional Experience</h2>
+                <p class="section-description">My career journey as a DevOps Engineer, showcasing my professional growth and key responsibilities at various organizations.</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <span class="timeline-date">Jan 2022 - Present</span>
+                            <h3 class="timeline-title">Senior DevOps Engineer</h3>
+                            <div class="timeline-company">
+                                <i class="fas fa-building"></i> TechNova Solutions
+                            </div>
+                            <p class="timeline-description">Leading the DevOps team in implementing and maintaining cloud infrastructure and CI/CD pipelines for enterprise applications.</p>
+                            <div class="timeline-achievements">
+                                <h4>Key Achievements</h4>
+                                <ul>
+                                    <li>Reduced deployment time by 80% through CI/CD pipeline optimization</li>
+                                    <li>Implemented GitOps workflow with ArgoCD for Kubernetes deployments</li>
+                                    <li>Led migration to microservices architecture using Docker and Kubernetes</li>
+                                    <li>Designed and implemented disaster recovery strategy with 99.99% uptime</li>
+                                </ul>
+                            </div>
+                            <div class="tech-used">
+                                <span>AWS</span>
+                                <span>Kubernetes</span>
+                                <span>Terraform</span>
+                                <span>Jenkins</span>
+                                <span>ArgoCD</span>
+                                <span>Docker</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <span class="timeline-date">Mar 2019 - Dec 2021</span>
+                            <h3 class="timeline-title">DevOps Engineer</h3>
+                            <div class="timeline-company">
+                                <i class="fas fa-building"></i> CloudSphere Inc.
+                            </div>
+                            <p class="timeline-description">Responsible for building and maintaining CI/CD pipelines, infrastructure automation, and cloud resource management.</p>
+                            <div class="timeline-achievements">
+                                <h4>Key Achievements</h4>
+                                <ul>
+                                    <li>Migrated on-premise infrastructure to AWS, reducing costs by 40%</li>
+                                    <li>Implemented infrastructure as code using Terraform and CloudFormation</li>
+                                    <li>Built comprehensive monitoring solution with Prometheus and Grafana</li>
+                                    <li>Automated security scanning in the deployment pipeline</li>
+                                </ul>
+                            </div>
+                            <div class="tech-used">
+                                <span>AWS</span>
+                                <span>Terraform</span>
+                                <span>Docker</span>
+                                <span>Jenkins</span>
+                                <span>Prometheus</span>
+                                <span>Grafana</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <span class="timeline-date">Jun 2017 - Feb 2019</span>
+                            <h3 class="timeline-title">Systems Administrator</h3>
+                            <div class="timeline-company">
+                                <i class="fas fa-building"></i> DataCore Systems
+                            </div>
+                            <p class="timeline-description">Managed and maintained Linux and Windows server infrastructure, implemented automation for routine tasks.</p>
+                            <div class="timeline-achievements">
+                                <h4>Key Achievements</h4>
+                                <ul>
+                                    <li>Automated server provisioning with Ansible, reducing setup time by 70%</li>
+                                    <li>Implemented centralized logging with ELK stack</li>
+                                    <li>Migrated legacy applications to containerized environments</li>
+                                    <li>Improved system reliability through infrastructure monitoring</li>
+                                </ul>
+                            </div>
+                            <div class="tech-used">
+                                <span>Linux</span>
+                                <span>Windows Server</span>
+                                <span>Ansible</span>
+                                <span>Bash</span>
+                                <span>ELK Stack</span>
+                                <span>Docker</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <span class="timeline-date">Aug 2015 - May 2017</span>
+                            <h3 class="timeline-title">IT Support Specialist</h3>
+                            <div class="timeline-company">
+                                <i class="fas fa-building"></i> TechSolutions Group
+                            </div>
+                            <p class="timeline-description">Provided technical support for internal systems and infrastructure, assisted with server maintenance and deployments.</p>
+                            <div class="timeline-achievements">
+                                <h4>Key Achievements</h4>
+                                <ul>
+                                    <li>Developed automation scripts for routine maintenance tasks</li>
+                                    <li>Assisted in migration to cloud-based services</li>
+                                    <li>Implemented monitoring for critical systems</li>
+                                    <li>Reduced ticket resolution time by 35%</li>
+                                </ul>
+                            </div>
+                            <div class="tech-used">
+                                <span>Linux</span>
+                                <span>Windows</span>
+                                <span>Bash</span>
+                                <span>PowerShell</span>
+                                <span>Networking</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">DevOps<span>Engineer</span></div>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 DevOps Engineer Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Timeline animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+            
+            timelineItems.forEach(item => {
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>
