@@ -286,36 +286,5 @@
     </footer>
 
     <script src="js/script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Contact form handling
-            const contactForm = document.getElementById('contact-form');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    // Here you would typically send the form data to a server
-                    // For now, we'll just show a success message
-                    const formData = new FormData(contactForm);
-                    let formValues = {};
-                    
-                    for (let [key, value] of formData.entries()) {
-                        formValues[key] = value;
-                    }
-                    
-                    // Log form data (in a real app, you'd send this to a server)
-                    console.log('Form submitted:', formValues);
-                    
-                    // Show success message
-                    contactForm.innerHTML = `
-                        <div class="form-success">
-                            <i class="fas fa-check-circle" style="font-size: 3rem; color: var(--accent-primary); margin-bottom: 20px;"></i>
-                            <h3>Message Sent!</h3>
-                            <p>Thank you for reaching out. I'll get back to you as soon as possible.</p>
-                        </div>
-                    `;
-                });
-            }
-        });
-    </script>
 </body>
 </html>
