@@ -100,9 +100,13 @@ document.addEventListener('DOMContentLoaded', function() {
     techIcons.forEach((icon, index) => {
         icon.style.setProperty('--i', index);
     });
-});
 
-<form action="https://formspree.io/f/myzwgapl" method="POST">
-    <input type="text" name="_subject" value=" ">
-    <input type="text" name="_next" value=" ">
-</form>
+    // Form handling
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            const button = this.querySelector('button[type="submit"]');
+            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        });
+    }
+});
