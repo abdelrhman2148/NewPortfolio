@@ -101,3 +101,8 @@ document.addEventListener('DOMContentLoaded', function() {
         icon.style.setProperty('--i', index);
     });
 });
+
+<form action="https://formspree.io/f/myzwgapl" method="POST">
+    <input type="text" name="_subject" value=" ">
+    <input type="text" name="_next" value=" ">
+</form>
