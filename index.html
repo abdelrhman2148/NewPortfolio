@@ -244,7 +244,7 @@
                 <p class="section-description">Have a question or want to discuss a potential project? Feel free to reach out using the form below.</p>
                 
                 <div class="contact-container">
-                    <form id="contact-form" class="contact-form">
+                    <form id="contact-form" class="contact-form" action="https://formspree.io/f/myzwgapl" method="POST">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" placeholder="Your name" required>
@@ -261,6 +261,10 @@
                             <label for="message">Message</label>
                             <textarea id="message" name="message" rows="5" placeholder="Your message" required></textarea>
                         </div>
+                        <!-- Add this hidden input to protect from spam -->
+                        <input type="hidden" name="_subject" value="New Portfolio Contact Form Submission">
+                        <!-- Redirect after submission -->
+                        <input type="hidden" name="_next" value="https://your-website.com/thank-you.html">
                         <button type="submit" class="btn primary">Send Message</button>
                     </form>
                 </div>
@@ -273,49 +277,18 @@
             <div class="footer-content">
                 <div class="footer-logo">DevOps<span>Engineer</span></div>
                 <div class="social-links">
-                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/abdelrhman2148" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/abdelrhman-fikri/" class="social-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://x.com/abdelrhmanfik" class="social-icon" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="mailto:abdilrahmanfikri@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 DevOps Engineer Portfolio. All rights reserved.</p>
+                <p>&copy; 2025 Abdelrhman Fikri Portfolio. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="js/script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Contact form handling
-            const contactForm = document.getElementById('contact-form');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    // Here you would typically send the form data to a server
-                    // For now, we'll just show a success message
-                    const formData = new FormData(contactForm);
-                    let formValues = {};
-                    
-                    for (let [key, value] of formData.entries()) {
-                        formValues[key] = value;
-                    }
-                    
-                    // Log form data (in a real app, you'd send this to a server)
-                    console.log('Form submitted:', formValues);
-                    
-                    // Show success message
-                    contactForm.innerHTML = `
-                        <div class="form-success">
-                            <i class="fas fa-check-circle" style="font-size: 3rem; color: var(--accent-primary); margin-bottom: 20px;"></i>
-                            <h3>Message Sent!</h3>
-                            <p>Thank you for reaching out. I'll get back to you as soon as possible.</p>
-                        </div>
-                    `;
-                });
-            }
-        });
-    </script>
 </body>
 </html>
